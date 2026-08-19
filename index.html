@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모의고사집 개정 의견 조사 | 최규하상담심리연구소</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --ink:#16202B;
+  --ink-2:#54646F;
+  --ink-3:#8695A0;
+  --paper:#FFFFFF;
+  --bg:#E7ECF0;
+  --brand:#44546A;
+  --accent:#0E7C6B;
+  --warn:#A8442B;
+  --line:#D3DCE3;
+  --line-soft:#E7EDF1;
+  --radius:3px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{
+  font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.7;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+
+.progress-wrap{
+  position:fixed;top:0;left:0;right:0;height:3px;
+  background:var(--line);z-index:100;
+}
+.progress-bar{
+  height:100%;width:0;background:var(--accent);
+  transition:width .35s cubic-bezier(.4,0,.2,1);
+}
+
+.shell{max-width:760px;margin:0 auto;padding:0 20px 96px}
+
+.masthead{padding:72px 0 40px}
+.eyebrow{
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--brand);font-weight:600;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(28px,5vw,40px);line-height:1.28;
+  font-weight:700;letter-spacing:-.025em;margin-bottom:20px;
+}
+.lede{font-size:17px;color:var(--ink-2);max-width:56ch}
+.lede + .lede{margin-top:14px}
+
+.notice{
+  background:var(--paper);border:1px solid var(--line);
+  border-left:3px solid var(--brand);
+  padding:24px 26px;margin-top:32px;border-radius:var(--radius);
+}
+.notice h2{font-size:15px;font-weight:700;margin-bottom:14px;letter-spacing:-.01em}
+.notice ul{list-style:none;font-size:14.5px;color:var(--ink-2)}
+.notice li{padding-left:18px;position:relative;margin-bottom:7px}
+.notice li::before{
+  content:"";position:absolute;left:0;top:12px;
+  width:6px;height:1px;background:var(--ink-3);
+}
+.notice li:last-child{margin-bottom:0}
+.notice .foot{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line-soft);
+  font-size:13.5px;color:var(--ink-3);
+}
+
+.section{margin-top:56px}
+.section-head{
+  display:flex;align-items:baseline;gap:12px;
+  padding-bottom:12px;margin-bottom:8px;
+  border-bottom:1px solid var(--line);
+}
+.section-num{
+  font-size:12px;font-weight:700;color:var(--ink-3);
+  font-variant-numeric:tabular-nums;letter-spacing:.06em;
+}
+.section-title{font-size:18px;font-weight:700;letter-spacing:-.015em}
+.section-note{font-size:14px;color:var(--ink-3);margin-bottom:20px}
+.section.is-key .section-head{border-bottom-color:var(--accent)}
+.section.is-key .section-num{color:var(--accent)}
+
+.q{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 28px;margin-bottom:14px;
+  transition:border-color .2s;
+}
+.q.is-error{border-color:var(--warn);box-shadow:0 0 0 3px rgba(168,68,43,.08)}
+.q-label{
+  display:flex;gap:12px;font-size:16px;font-weight:600;
+  letter-spacing:-.01em;margin-bottom:6px;line-height:1.55;
+}
+.q-num{
+  color:var(--ink-3);font-weight:700;font-size:14px;
+  font-variant-numeric:tabular-nums;flex-shrink:0;padding-top:1px;
+}
+.q-help{font-size:14px;color:var(--ink-3);margin:0 0 16px 32px;line-height:1.6}
+.q-body{margin-left:32px}
+@media(max-width:560px){
+  .q{padding:22px 20px}
+  .q-help,.q-body{margin-left:0}
+}
+.req{color:var(--warn);font-weight:700;margin-left:4px}
+.opt{
+  font-size:11.5px;color:var(--ink-3);font-weight:500;
+  border:1px solid var(--line);border-radius:2px;
+  padding:1px 6px;margin-left:8px;letter-spacing:.02em;
+  align-self:center;
+}
+
+.choices{display:flex;flex-direction:column;gap:2px}
+.choice{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:9px 12px;margin-left:-12px;border-radius:var(--radius);
+  cursor:pointer;font-size:15.5px;color:var(--ink-2);
+  transition:background .15s;
+}
+.choice:hover{background:#F3F7F9}
+.choice input{
+  appearance:none;-webkit-appearance:none;
+  width:17px;height:17px;flex-shrink:0;margin-top:4px;
+  border:1.5px solid var(--ink-3);background:var(--paper);
+  cursor:pointer;transition:border-color .15s;
+}
+.choice input[type=radio]{border-radius:50%}
+.choice input[type=checkbox]{border-radius:2px}
+.choice input:checked{border-color:var(--accent);border-width:5px}
+.choice input[type=checkbox]:checked{
+  border-width:1.5px;background:var(--accent);border-color:var(--accent);
+}
+.choice input:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.choice:has(input:checked){color:var(--ink);font-weight:500}
+
+.choices.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px}
+@media(max-width:560px){.choices.grid-2{grid-template-columns:1fr}}
+
+.scale{margin-top:4px}
+.scale-track{display:flex;gap:6px}
+.scale-item{flex:1;position:relative}
+.scale-item input{position:absolute;opacity:0;width:0;height:0}
+.scale-item label{
+  display:block;text-align:center;padding:11px 2px;
+  border:1px solid var(--line);border-radius:var(--radius);
+  font-size:15px;font-weight:600;color:var(--ink-2);cursor:pointer;
+  font-variant-numeric:tabular-nums;transition:all .15s;
+}
+.scale-item label:hover{border-color:var(--ink-3);background:#F3F7F9}
+.scale-item input:checked + label{
+  background:var(--accent);border-color:var(--accent);color:#fff;
+}
+.scale-item input:focus-visible + label{outline:2px solid var(--brand);outline-offset:2px}
+.scale-ends{
+  display:flex;justify-content:space-between;
+  font-size:12.5px;color:var(--ink-3);margin-top:9px;
+}
+.scale-track.wide label{padding:9px 1px;font-size:13.5px}
+@media(max-width:560px){
+  .scale-track.wide{flex-wrap:wrap}
+  .scale-track.wide .scale-item{flex:0 0 calc(20% - 5px)}
+}
+
+input[type=text],input[type=tel],textarea{
+  width:100%;font-family:inherit;font-size:15.5px;color:var(--ink);
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:var(--radius);padding:11px 13px;line-height:1.7;
+  transition:border-color .15s;
+}
+input[type=text]:focus,input[type=tel]:focus,textarea:focus{
+  outline:none;border-color:var(--brand);box-shadow:0 0 0 3px rgba(68,84,106,.09);
+}
+textarea{min-height:150px;resize:vertical}
+.sub-input{margin-top:8px;margin-left:28px;max-width:340px}
+
+.meter{margin-top:12px}
+.meter-rail{
+  height:2px;background:var(--line);border-radius:2px;overflow:hidden;
+}
+.meter-fill{
+  height:100%;width:0;background:var(--ink-3);
+  transition:width .25s ease-out,background-color .3s;
+}
+.meter-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-top:8px;font-size:13px;
+}
+.meter-count{
+  font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink-3);
+  transition:color .3s;
+}
+.meter-status{color:var(--ink-3);transition:color .3s}
+.meter.is-met .meter-fill{background:var(--accent)}
+.meter.is-met .meter-count{color:var(--accent)}
+.meter.is-met .meter-status{color:var(--accent);font-weight:600}
+
+.consent-box{
+  background:#F4F7F9;border:1px solid var(--line-soft);
+  border-radius:var(--radius);padding:16px 18px;margin-bottom:14px;
+  font-size:14px;color:var(--ink-2);
+}
+.consent-box dl{display:grid;grid-template-columns:auto 1fr;gap:5px 14px}
+.consent-box dt{font-weight:600;color:var(--ink);white-space:nowrap}
+
+.submit-zone{margin-top:48px;text-align:center}
+.btn{
+  font-family:inherit;font-size:16px;font-weight:600;letter-spacing:-.01em;
+  background:var(--brand);color:#fff;border:none;border-radius:var(--radius);
+  padding:15px 52px;cursor:pointer;transition:background .18s;
+}
+.btn:hover{background:#374557}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.btn:disabled{background:var(--ink-3);cursor:not-allowed}
+.submit-msg{
+  margin-top:16px;font-size:14.5px;color:var(--warn);
+  min-height:22px;font-weight:500;
+}
+
+.done{display:none;padding:96px 0;text-align:center}
+.done.show{display:block}
+.done-mark{
+  width:44px;height:44px;margin:0 auto 28px;
+  border:1.5px solid var(--accent);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--accent);font-size:20px;
+}
+.done h2{font-size:26px;font-weight:700;margin-bottom:18px;letter-spacing:-.02em}
+.done p{color:var(--ink-2);max-width:44ch;margin:0 auto 12px;font-size:16px}
+
+.foot-sig{
+  margin-top:64px;padding-top:24px;border-top:1px solid var(--line);
+  font-size:13px;color:var(--ink-3);text-align:center;
+}
+</style>
+</head>
+<body>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="shell">
+
+<div id="formView">
+
+  <header class="masthead">
+    <div class="eyebrow">최규하상담심리연구소 &middot; 2CPlab.</div>
+    <h1>모의고사집을 쓰고<br>어떤 점이 부족했는지 알려주십시오</h1>
+    <p class="lede">한국상담학회 전문상담사 2급 필기시험이 끝났습니다. 준비하신 시간에 응원을 보냅니다.</p>
+    <p class="lede">문제집은 실제 시험을 치른 분의 관점 없이는 개선되기 어렵습니다. 특히 출제 영역의 배분이나, 시험에는 나왔지만 교재에 없었던 주제는 시험을 직접 보신 분만 알 수 있습니다. 개정판에 반영하겠습니다.</p>
+
+    <div class="notice">
+      <h2>기프티콘 지급 요건</h2>
+      <ul>
+        <li>필수 문항에 모두 응답</li>
+        <li>서술형 3개 문항에 각 100자 이상 작성 (공백 포함)</li>
+        <li>구매 확인 정보 기재</li>
+      </ul>
+      <div class="foot">요건을 충족한 분께 커피 기프티콘(5,000원 상당)을 보내드립니다. 최대 20명까지이며, 마감 후 3일 이내에 일괄 발송합니다. 소요 시간은 약 8분입니다.</div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-head"><span class="section-num">01</span><h2 class="section-title">구매 확인</h2></div>
+    <p class="section-note">구매하신 분의 응답만 반영합니다.</p>
+
+    <div class="q" data-q="q1">
+      <div class="q-label"><span class="q-num">1</span><span>어디에서 구매하셨습니까?<span class="req">*</span></span></div>
+      <div class="q-body">
+        <div class="choices">
+          <label class="choice"><input type="radio" name="q1" value="스마트스토어"><span>스마트스토어</span></label>
+          <label class="choice"><input type="radio" name="q1" value="블로그 직접 문의"><span>블로그 직접 문의</span></label>
+          <label class="choice"><input type="radio" name="q1" value="기타"><span>기타</span></label>
+        </div>
+        <input type="text" class="sub-input" name="q1_etc" placeholder="기타 구매처" aria-label="기타 구매처">
+      </div>
+    </div>
+
+    <div class="q" data-q="q2">
+      <div class="q-label"><span class="q-num">2</span><span>주문번호를 적어주십시오.<span class="req">*</span></span></div>
+      <p class="q-help">확인이 어려우시면 구매일을 적어주셔도 됩니다. 예: 2026-05-14</p>
+      <div class="q-body"><input type="text" name="q2" placeholder="주문번호 또는 구매일"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-num">02</span><h2 class="section-title">학습 사용 경험</h2></div>
+    <p class="section-note">뒤 문항의 답변을 해석하는 기준이 됩니다.</p>
+
+    <div class="q" data-q="q3">
+      <div class="q-label"><span class="q-num">3</span><span>언제 구매하셨습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q3" value="3개월 이상 전"><span>시험 3개월 이상 전</span></label>
+        <label class="choice"><input type="radio" name="q3" value="2~3개월 전"><span>2~3개월 전</span></label>
+        <label class="choice"><input type="radio" name="q3" value="1~2개월 전"><span>1~2개월 전</span></label>
+        <label class="choice"><input type="radio" name="q3" value="1개월 이내"><span>1개월 이내</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q4">
+      <div class="q-label"><span class="q-num">4</span><span>700문항 중 실제로 몇 문항 정도 푸셨습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q4" value="전체"><span>전체 다 풀었다</span></label>
+        <label class="choice"><input type="radio" name="q4" value="500문항 이상"><span>500문항 이상</span></label>
+        <label class="choice"><input type="radio" name="q4" value="300~500문항"><span>300~500문항</span></label>
+        <label class="choice"><input type="radio" name="q4" value="100~300문항"><span>100~300문항</span></label>
+        <label class="choice"><input type="radio" name="q4" value="100문항 미만"><span>100문항 미만</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q5">
+      <div class="q-label"><span class="q-num">5</span><span>몇 회독 하셨습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q5" value="1회"><span>1회</span></label>
+        <label class="choice"><input type="radio" name="q5" value="2회"><span>2회</span></label>
+        <label class="choice"><input type="radio" name="q5" value="3회 이상"><span>3회 이상</span></label>
+        <label class="choice"><input type="radio" name="q5" value="특정 과목만 반복"><span>특정 과목만 반복</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q6">
+      <div class="q-label"><span class="q-num">6</span><span>함께 사용하신 다른 교재나 강의가 있습니까?<span class="opt">선택</span></span></div>
+      <div class="q-body"><input type="text" name="q6" placeholder="교재명 또는 강의명"></div>
+    </div>
+  </section>
+
+  <section class="section is-key">
+    <div class="section-head"><span class="section-num">03</span><h2 class="section-title">실제 시험과의 비교</h2></div>
+    <p class="section-note">개정판의 방향을 결정하는 부분입니다.</p>
+
+    <div class="q" data-q="q7">
+      <div class="q-label"><span class="q-num">7</span><span>실제 시험과 비교한 모의고사집의 난이도는 어땠습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="scale">
+        <div class="scale-track" id="q7track"></div>
+        <div class="scale-ends"><span>훨씬 쉬웠다</span><span>비슷했다</span><span>훨씬 어려웠다</span></div>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q8">
+      <div class="q-label"><span class="q-num">8</span><span>난이도가 특히 안 맞았던 과목을 골라주십시오.<span class="req">*</span></span></div>
+      <p class="q-help">여러 개 고르실 수 있습니다.</p>
+      <div class="q-body"><div class="choices grid-2" id="q8box"></div></div>
+    </div>
+
+    <div class="q" data-q="q9">
+      <div class="q-label"><span class="q-num">9</span><span>실제 시험의 출제 영역 배분과 얼마나 일치했습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="scale">
+        <div class="scale-track" id="q9track"></div>
+        <div class="scale-ends"><span>많이 달랐다</span><span>보통</span><span>거의 일치했다</span></div>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q10">
+      <div class="q-label"><span class="q-num">10</span><span>시험에는 나왔지만 모의고사집에 없었던 개념이나 주제를 적어주십시오.<span class="req">*</span></span></div>
+      <p class="q-help">기억나는 대로 괜찮습니다. 과목명을 함께 적어주시면 더 좋습니다. 이 답변이 개정판 신규 문항의 출발점이 됩니다.</p>
+      <div class="q-body">
+        <textarea name="q10" data-min="100" placeholder="예) 집단상담 과목에서 특정 이론의 단계 구분이 나왔는데 교재에서는 다루지 않았습니다..."></textarea>
+        <div class="meter">
+          <div class="meter-rail"><div class="meter-fill"></div></div>
+          <div class="meter-row"><span class="meter-count">0 / 100자</span><span class="meter-status">100자 이상 필요합니다</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-num">04</span><h2 class="section-title">교재 품질</h2></div>
+
+    <div class="q" data-q="q11">
+      <div class="q-label"><span class="q-num">11</span><span>해설의 상세도는 어땠습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q11" value="너무 간략"><span>너무 간략했다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="다소 부족"><span>다소 부족했다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="적정"><span>적정했다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="다소 과함"><span>다소 과했다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q12">
+      <div class="q-label"><span class="q-num">12</span><span>문항 오류를 발견하신 적이 있습니까?<span class="req">*</span></span></div>
+      <p class="q-help">정답 오류, 지문 오류, 오탈자 등을 포함합니다.</p>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q12" value="여러 번"><span>여러 번 있었다</span></label>
+        <label class="choice"><input type="radio" name="q12" value="몇 번"><span>몇 번 있었다</span></label>
+        <label class="choice"><input type="radio" name="q12" value="거의 없음"><span>거의 없었다</span></label>
+        <label class="choice"><input type="radio" name="q12" value="기억나지 않음"><span>기억나지 않는다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q13">
+      <div class="q-label"><span class="q-num">13</span><span>내용을 몰라도 답을 고를 수 있는 문항이 있었습니까?<span class="req">*</span></span></div>
+      <p class="q-help">예를 들어 유독 긴 선택지가 정답이거나, "항상" "절대"가 들어간 선택지는 오답인 경우입니다.</p>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q13" value="자주"><span>자주 있었다</span></label>
+        <label class="choice"><input type="radio" name="q13" value="가끔"><span>가끔 있었다</span></label>
+        <label class="choice"><input type="radio" name="q13" value="거의 없음"><span>거의 없었다</span></label>
+        <label class="choice"><input type="radio" name="q13" value="의식 못함"><span>의식하지 못했다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q14">
+      <div class="q-label"><span class="q-num">14</span><span>605쪽 분량과 판형의 실사용은 어땠습니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="radio" name="q14" value="불편"><span>휴대와 사용이 불편했다</span></label>
+        <label class="choice"><input type="radio" name="q14" value="무난"><span>무난했다</span></label>
+        <label class="choice"><input type="radio" name="q14" value="만족"><span>만족했다</span></label>
+        <label class="choice"><input type="radio" name="q14" value="분권 희망"><span>과목별로 나뉘면 좋겠다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q15">
+      <div class="q-label"><span class="q-num">15</span><span>가장 아쉬웠던 점, 고쳐야 한다고 보시는 부분을 적어주십시오.<span class="req">*</span></span></div>
+      <p class="q-help">구체적일수록 반영하기 쉽습니다. 비판적인 의견이 오히려 감사합니다.</p>
+      <div class="q-body">
+        <textarea name="q15" data-min="100" placeholder="구체적인 과목이나 쪽수를 함께 적어주시면 더 좋습니다."></textarea>
+        <div class="meter">
+          <div class="meter-rail"><div class="meter-fill"></div></div>
+          <div class="meter-row"><span class="meter-count">0 / 100자</span><span class="meter-status">100자 이상 필요합니다</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-num">05</span><h2 class="section-title">구매 결정</h2></div>
+    <p class="section-note">교재를 알리는 방식을 개선하는 데 씁니다.</p>
+
+    <div class="q" data-q="q16">
+      <div class="q-label"><span class="q-num">16</span><span>이 모의고사집을 어떻게 알게 되셨습니까?<span class="req">*</span></span></div>
+      <div class="q-body">
+        <div class="choices grid-2">
+          <label class="choice"><input type="radio" name="q16" value="블로그 검색"><span>블로그 검색</span></label>
+          <label class="choice"><input type="radio" name="q16" value="카페·커뮤니티"><span>카페·커뮤니티</span></label>
+          <label class="choice"><input type="radio" name="q16" value="지인 추천"><span>지인 추천</span></label>
+          <label class="choice"><input type="radio" name="q16" value="SNS"><span>SNS</span></label>
+          <label class="choice"><input type="radio" name="q16" value="기타"><span>기타</span></label>
+        </div>
+        <input type="text" class="sub-input" name="q16_etc" placeholder="기타 경로" aria-label="기타 경로">
+      </div>
+    </div>
+
+    <div class="q" data-q="q17">
+      <div class="q-label"><span class="q-num">17</span><span>구매를 망설이게 한 요인이 있었습니까?<span class="req">*</span></span></div>
+      <p class="q-help">가격, 정보 부족, 미리보기 부재, 저자에 대한 정보 등 무엇이든 좋습니다. 망설임이 없었다면 왜 바로 결정하셨는지 적어주십시오.</p>
+      <div class="q-body">
+        <textarea name="q17" data-min="100" placeholder="예) 미리보기가 없어서 문항 수준을 가늠할 수 없었습니다..."></textarea>
+        <div class="meter">
+          <div class="meter-rail"><div class="meter-fill"></div></div>
+          <div class="meter-row"><span class="meter-count">0 / 100자</span><span class="meter-status">100자 이상 필요합니다</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q" data-q="q18">
+      <div class="q-label"><span class="q-num">18</span><span>이 교재의 적정 가격은 어느 수준이라고 보십니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices">
+        <label class="choice"><input type="radio" name="q18" value="낮아야 함"><span>지금 가격보다 낮아야 한다</span></label>
+        <label class="choice"><input type="radio" name="q18" value="적정"><span>지금 가격이 적정하다</span></label>
+        <label class="choice"><input type="radio" name="q18" value="높아도 무방"><span>지금 가격보다 높아도 무방하다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q19">
+      <div class="q-label"><span class="q-num">19</span><span>동료 수험생에게 추천하실 의향은 어느 정도입니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="scale">
+        <div class="scale-track wide" id="q19track"></div>
+        <div class="scale-ends"><span>전혀 없다</span><span>매우 높다</span></div>
+      </div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head"><span class="section-num">06</span><h2 class="section-title">동의 및 발송 정보</h2></div>
+
+    <div class="q" data-q="q20">
+      <div class="q-label"><span class="q-num">20</span><span>답변의 일부를 홍보 자료에 인용해도 되겠습니까?<span class="req">*</span></span></div>
+      <p class="q-help">지금 당장 공개하지는 않습니다. 앞으로 필요할 때를 위해 미리 여쭙습니다.</p>
+      <div class="q-body"><div class="choices">
+        <label class="choice"><input type="radio" name="q20" value="익명 인용 가능"><span>익명으로 인용해도 좋다</span></label>
+        <label class="choice"><input type="radio" name="q20" value="닉네임 인용 가능"><span>닉네임으로 인용해도 좋다</span></label>
+        <label class="choice"><input type="radio" name="q20" value="인용 불가"><span>인용을 원하지 않는다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q21">
+      <div class="q-label"><span class="q-num">21</span><span>개인정보 수집과 이용에 동의하십니까?<span class="req">*</span></span></div>
+      <div class="q-body">
+        <div class="consent-box"><dl>
+          <dt>수집 항목</dt><dd>휴대폰 번호, 구매 확인 정보</dd>
+          <dt>이용 목적</dt><dd>기프티콘 발송, 구매 확인</dd>
+          <dt>보유 기간</dt><dd>발송 완료 후 즉시 파기</dd>
+        </dl></div>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="q21" value="동의"><span>동의합니다</span></label>
+          <label class="choice"><input type="radio" name="q21" value="비동의"><span>동의하지 않습니다 (기프티콘 발송 불가)</span></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="q" data-q="q22">
+      <div class="q-label"><span class="q-num">22</span><span>기프티콘을 받으실 휴대폰 번호를 적어주십시오.<span class="req">*</span></span></div>
+      <div class="q-body"><input type="tel" name="q22" placeholder="010-0000-0000" maxlength="13"></div>
+    </div>
+  </section>
+
+  <div class="submit-zone">
+    <button type="button" class="btn" id="submitBtn">답변 보내기</button>
+    <div class="submit-msg" id="submitMsg" role="status" aria-live="polite"></div>
+  </div>
+
+  <div class="foot-sig">최규하상담심리연구소 &middot; 2CPlab.</div>
+</div>
+
+<div class="done" id="doneView">
+  <div class="done-mark">&#10003;</div>
+  <h2>답변이 전달되었습니다</h2>
+  <p>적어주신 내용은 개정판 작업에 그대로 쓰입니다. 특히 시험에 나왔지만 교재에 없었던 부분은 신규 문항으로 반영하겠습니다.</p>
+  <p>기프티콘은 마감 후 3일 이내에 적어주신 번호로 보내드립니다.</p>
+  <div class="foot-sig">최규하상담심리연구소 &middot; 2CPlab.</div>
+</div>
+
+</div>
+
+<script>
+/* ====== 설정 ====== */
+const ENDPOINT = "PASTE_APPS_SCRIPT_URL_HERE";
+const ACCESS_KEY = "cpl2026";
+
+/* ---------- 척도 생성 ---------- */
+function buildScale(id, name, min, max){
+  const box = document.getElementById(id);
+  let html = "";
+  for(let i=min;i<=max;i++){
+    html += '<div class="scale-item">'
+      + '<input type="radio" id="' + name + '_' + i + '" name="' + name + '" value="' + i + '">'
+      + '<label for="' + name + '_' + i + '">' + i + '</label></div>';
+  }
+  box.innerHTML = html;
+}
+buildScale("q7track","q7",1,5);
+buildScale("q9track","q9",1,5);
+buildScale("q19track","q19",0,10);
+
+/* ---------- 과목 생성 ---------- */
+const SUBJECTS = [
+  "상담이론과 실제","집단상담","심리측정과 평가","진로상담",
+  "가족상담","학습상담","상담연구방법론"
+];
+document.getElementById("q8box").innerHTML =
+  SUBJECTS.map(function(s){
+    return '<label class="choice"><input type="checkbox" name="q8" value="' + s + '"><span>' + s + '</span></label>';
+  }).join("")
+  + '<label class="choice"><input type="checkbox" name="q8" value="특별히 없음"><span>특별히 없음</span></label>';
+
+/* ---------- 글자수 미터 ---------- */
+document.querySelectorAll("textarea[data-min]").forEach(function(ta){
+  const min = Number(ta.dataset.min);
+  const meter = ta.parentElement.querySelector(".meter");
+  const fill = meter.querySelector(".meter-fill");
+  const cnt = meter.querySelector(".meter-count");
+  const st  = meter.querySelector(".meter-status");
+  ta.addEventListener("input",function(){
+    const n = ta.value.trim().length;
+    fill.style.width = Math.min(100, n/min*100) + "%";
+    cnt.textContent = n + " / " + min + "자";
+    if(n>=min){ meter.classList.add("is-met"); st.textContent="충족"; }
+    else { meter.classList.remove("is-met"); st.textContent = min + "자 이상 필요합니다"; }
+    updateProgress();
+  });
+});
+
+/* ---------- 필수 문항 ---------- */
+const REQUIRED = [
+  {n:"q1",t:"radio"},{n:"q2",t:"text"},{n:"q3",t:"radio"},{n:"q4",t:"radio"},
+  {n:"q5",t:"radio"},{n:"q7",t:"radio"},{n:"q8",t:"check"},{n:"q9",t:"radio"},
+  {n:"q10",t:"long"},{n:"q11",t:"radio"},{n:"q12",t:"radio"},{n:"q13",t:"radio"},
+  {n:"q14",t:"radio"},{n:"q15",t:"long"},{n:"q16",t:"radio"},{n:"q17",t:"long"},
+  {n:"q18",t:"radio"},{n:"q19",t:"radio"},{n:"q20",t:"radio"},{n:"q21",t:"radio"},
+  {n:"q22",t:"text"}
+];
+
+function isFilled(item){
+  const els = document.getElementsByName(item.n);
+  if(item.t==="radio"||item.t==="check")
+    return Array.prototype.some.call(els,function(e){return e.checked;});
+  if(item.t==="long")
+    return els[0].value.trim().length >= Number(els[0].dataset.min);
+  return els[0].value.trim().length > 0;
+}
+
+function updateProgress(){
+  const done = REQUIRED.filter(isFilled).length;
+  document.getElementById("progressBar").style.width =
+    (done/REQUIRED.length*100) + "%";
+}
+document.addEventListener("input",updateProgress);
+document.addEventListener("change",updateProgress);
+updateProgress();
+
+/* ---------- 전화번호 하이픈 ---------- */
+document.querySelector("[name=q22]").addEventListener("input",function(e){
+  let v = e.target.value.replace(/[^0-9]/g,"").slice(0,11);
+  if(v.length>7) v = v.slice(0,3)+"-"+v.slice(3,7)+"-"+v.slice(7);
+  else if(v.length>3) v = v.slice(0,3)+"-"+v.slice(3);
+  e.target.value = v;
+});
+
+/* ---------- 제출 ---------- */
+const btn = document.getElementById("submitBtn");
+const msg = document.getElementById("submitMsg");
+
+btn.addEventListener("click", function(){
+  document.querySelectorAll(".q.is-error").forEach(function(q){q.classList.remove("is-error");});
+  const missing = REQUIRED.filter(function(i){return !isFilled(i);});
+
+  if(missing.length){
+    missing.forEach(function(i){
+      const card = document.querySelector('.q[data-q="' + i.n + '"]');
+      if(card) card.classList.add("is-error");
+    });
+    document.querySelector('.q[data-q="' + missing[0].n + '"]')
+      .scrollIntoView({block:"center"});
+    msg.textContent = "아직 답하지 않은 문항이 " + missing.length + "개 있습니다. 표시된 곳을 확인해 주십시오.";
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = "보내는 중";
+  msg.textContent = "";
+
+  const fd = new FormData();
+  fd.append("k", ACCESS_KEY);
+  fd.append("timestamp", new Date().toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}));
+
+  REQUIRED.forEach(function(i){
+    const els = document.getElementsByName(i.n);
+    if(i.t==="check"){
+      fd.append(i.n, Array.prototype.filter.call(els,function(e){return e.checked;})
+        .map(function(e){return e.value;}).join(" / "));
+    } else if(i.t==="radio"){
+      fd.append(i.n, Array.prototype.find.call(els,function(e){return e.checked;}).value);
+    } else {
+      fd.append(i.n, els[0].value.trim());
+    }
+  });
+
+  ["q1_etc","q6","q16_etc"].forEach(function(n){
+    const el = document.querySelector("[name=" + n + "]");
+    fd.append(n, el ? el.value.trim() : "");
+  });
+
+  fetch(ENDPOINT,{method:"POST",body:fd})
+    .then(function(){
+      document.getElementById("formView").style.display="none";
+      document.getElementById("doneView").classList.add("show");
+      document.getElementById("progressBar").style.width="100%";
+      window.scrollTo(0,0);
+    })
+    .catch(function(){
+      btn.disabled = false;
+      btn.textContent = "답변 보내기";
+      msg.textContent = "전송에 실패했습니다. 잠시 후 다시 눌러주시거나 블로그 댓글로 알려주십시오.";
+    });
+});
+</script>
+</body>
+</html>
