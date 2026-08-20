@@ -276,19 +276,16 @@ textarea{min-height:130px;resize:vertical}
     </div>
 
     <div class="q" data-q="q11">
-      <div class="q-label"><span class="q-num">11</span><span>전자책으로 학습하시면서 불편했던 점을 골라주십시오.<span class="req">*</span></span></div>
-      <p class="q-help">여러 개 고르실 수 있습니다. 다음 판의 제작 방식을 정하는 데 씁니다.</p>
+      <div class="q-label"><span class="q-num">11</span><span>이 교재를 어떤 방식으로 사용하셨습니까?<span class="req">*</span></span></div>
+      <p class="q-help">여러 개 고르실 수 있습니다. 다음 판을 인쇄용과 화면용 중 어느 쪽에 맞춰 만들지 정하는 데 씁니다.</p>
       <div class="q-body"><div class="choices">
-        <label class="choice"><input type="checkbox" name="q11" value="문제-해설 이동"><span>문제와 해설 사이를 오가기 불편했다</span></label>
-        <label class="choice"><input type="checkbox" name="q11" value="가독성"><span>화면에서 글자나 표가 잘 보이지 않았다</span></label>
-        <label class="choice"><input type="checkbox" name="q11" value="오답표시·메모"><span>오답 표시나 메모를 하기 어려웠다</span></label>
-        <label class="choice"><input type="checkbox" name="q11" value="탐색·목차 이동"><span>원하는 과목이나 회차를 찾아가기 어려웠다</span></label>
-        <label class="choice"><input type="checkbox" name="q11" value="인쇄 불가"><span>인쇄해서 풀고 싶었는데 어려웠다</span></label>
-        <label class="choice"><input type="checkbox" name="q11" value="기기 호환"><span>보는 기기에 따라 화면이 깨졌다</span></label>
-        <label class="choice" data-excl="1"><input type="checkbox" name="q11" value="특별히 없음"><span>특별히 불편한 점은 없었다</span></label>
+        <label class="choice"><input type="checkbox" name="q11" value="전체 인쇄"><span>전체를 인쇄해서 종이로 풀었다</span></label>
+        <label class="choice"><input type="checkbox" name="q11" value="부분 인쇄"><span>필요한 과목만 인쇄해서 풀었다</span></label>
+        <label class="choice"><input type="checkbox" name="q11" value="태블릿"><span>태블릿 화면으로 봤다</span></label>
+        <label class="choice"><input type="checkbox" name="q11" value="PC"><span>PC 모니터로 봤다</span></label>
+        <label class="choice"><input type="checkbox" name="q11" value="스마트폰"><span>스마트폰으로 봤다</span></label>
       </div></div>
     </div>
-
     <div class="q" data-q="q12">
       <div class="q-label"><span class="q-num">12</span><span>이 교재에서 가장 도움이 되었던 점을 골라주십시오.<span class="req">*</span></span></div>
       <p class="q-help">여러 개 고르실 수 있습니다. 다음 판에서 유지해야 할 부분을 판단하는 데 씁니다.</p>
@@ -298,7 +295,7 @@ textarea{min-height:130px;resize:vertical}
         <label class="choice"><input type="checkbox" name="q12" value="해설"><span>해설의 내용</span></label>
         <label class="choice"><input type="checkbox" name="q12" value="실전 유사도"><span>실제 시험과의 유사도</span></label>
         <label class="choice"><input type="checkbox" name="q12" value="가격"><span>가격 대비 가치</span></label>
-        <label class="choice"><input type="checkbox" name="q12" value="접근 편의"><span>언제 어디서나 볼 수 있는 점</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="인쇄 가능"><span>인쇄해서 종이로 쓸 수 있는 점</span></label>
         <label class="choice" data-excl="1"><input type="checkbox" name="q12" value="특별히 없음"><span>특별히 없음</span></label>
       </div></div>
     </div>
@@ -490,7 +487,6 @@ function bindExclusive(groupName){
   });
 }
 bindExclusive("q4");
-bindExclusive("q11");
 bindExclusive("q12");
 
 /* ---------- 조건부 표시 ---------- */
