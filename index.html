@@ -441,12 +441,31 @@ textarea{min-height:130px;resize:vertical}
   <div class="foot-sig">2CPlab.</div>
 </div>
 
+<div class="done" id="gateView">
+  <div class="done-mark" style="border-color:var(--ink-3);color:var(--ink-3)">!</div>
+  <h2>블로그를 통해 접속해 주십시오</h2>
+  <p>이 설문은 모의고사집을 구매하신 분께 블로그 안내글을 통해 열려 있습니다.</p>
+  <p>안내글에 있는 링크를 눌러 다시 들어와 주시기 바랍니다.</p>
+  <div class="foot-sig">2CPlab.</div>
+</div>
+
 </div>
 
 <script>
 /* ====== 설정 ====== */
 const ENDPOINT = "PASTE_APPS_SCRIPT_URL_HERE";
 const ACCESS_KEY = "cpl2026";
+/* ---------- 블로그 링크 확인 ---------- */
+const LINK_TOKEN = "2cp";
+(function gate(){
+  var t = new URLSearchParams(location.search).get("t");
+  if(t !== LINK_TOKEN){
+    document.getElementById("formView").style.display = "none";
+    document.getElementById("gateView").classList.add("show");
+    document.querySelector(".progress-wrap").style.display = "none";
+  }
+})();
+
 
 /* ---------- 척도 생성 ---------- */
 function buildScale(id, name, min, max){
