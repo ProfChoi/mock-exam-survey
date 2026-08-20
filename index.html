@@ -95,7 +95,6 @@ input[type=text]:focus,input[type=tel]:focus,textarea:focus{outline:none;border-
 textarea{min-height:130px;resize:vertical}
 .sub-input{margin-top:8px;margin-left:28px;max-width:340px}
 
-/* 조건부 영역 */
 .cond{display:none;margin-top:16px;padding-top:16px;border-top:1px dashed var(--line)}
 .cond.show{display:block}
 .cond-label{font-size:14.5px;font-weight:600;color:var(--ink-2);margin-bottom:10px}
@@ -150,7 +149,7 @@ textarea{min-height:130px;resize:vertical}
         <li>서술형 2개 문항 작성 (각 100자 / 50자 이상, 공백 포함)</li>
         <li>주문번호 또는 구매일 기재</li>
       </ul>
-      <div class="foot">요건을 충족한 분께 커피 기프티콘(5,000원 상당)을 보내드립니다. 최대 20명까지이며, 마감 후 3일 이내에 일괄 발송합니다. 소요 시간은 약 8분입니다.</div>
+      <div class="foot">요건을 충족한 분께 커피 기프티콘(5,000원 상당)을 보내드립니다. 최대 20명까지이며, 마감 후 3일 이내에 일괄 발송합니다. 소요 시간은 약 7분입니다.</div>
     </div>
   </header>
 
@@ -187,48 +186,38 @@ textarea{min-height:130px;resize:vertical}
     <p class="section-note">개정판의 방향을 결정하는 부분입니다.</p>
 
     <div class="q" data-q="q3">
-      <div class="q-label"><span class="q-num">3</span><span>가채점 기준으로 체감하신 결과는 어떻습니까?<span class="req">*</span></span></div>
-      <div class="q-body"><div class="choices grid-2">
-        <label class="choice"><input type="radio" name="q3" value="합격권 여유"><span>합격권으로 여유가 있다</span></label>
-        <label class="choice"><input type="radio" name="q3" value="합격권 근접"><span>합격선 근처다</span></label>
-        <label class="choice"><input type="radio" name="q3" value="불합격권"><span>부족한 것 같다</span></label>
-        <label class="choice"><input type="radio" name="q3" value="가채점 안 함"><span>가채점하지 않았다</span></label>
-      </div></div>
-    </div>
-
-    <div class="q" data-q="q4">
-      <div class="q-label"><span class="q-num">4</span><span>실제 시험과 비교한 모의고사집의 난이도는 어땠습니까?<span class="req">*</span></span></div>
+      <div class="q-label"><span class="q-num">3</span><span>실제 시험과 비교한 모의고사집의 난이도는 어땠습니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="scale">
-        <div class="scale-track" id="q4track"></div>
+        <div class="scale-track" id="q3track"></div>
         <div class="scale-ends"><span>훨씬 쉬웠다</span><span>비슷했다</span><span>훨씬 어려웠다</span></div>
       </div></div>
     </div>
 
-    <div class="q" data-q="q5">
-      <div class="q-label"><span class="q-num">5</span><span>난이도가 특히 안 맞았던 과목을 골라주십시오.<span class="req">*</span></span></div>
+    <div class="q" data-q="q4">
+      <div class="q-label"><span class="q-num">4</span><span>난이도가 특히 안 맞았던 과목을 골라주십시오.<span class="req">*</span></span></div>
       <p class="q-help">여러 개 고르실 수 있습니다.</p>
-      <div class="q-body"><div class="choices grid-2" id="q5box"></div></div>
+      <div class="q-body"><div class="choices grid-2" id="q4box"></div></div>
     </div>
 
-    <div class="q" data-q="q6">
-      <div class="q-label"><span class="q-num">6</span><span>실제 시험의 출제 영역 배분과 얼마나 일치했습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q5">
+      <div class="q-label"><span class="q-num">5</span><span>실제 시험의 출제 영역 배분과 얼마나 일치했습니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="scale">
-        <div class="scale-track" id="q6track"></div>
+        <div class="scale-track" id="q5track"></div>
         <div class="scale-ends"><span>많이 달랐다</span><span>보통</span><span>거의 일치했다</span></div>
       </div></div>
     </div>
 
-    <div class="q" data-q="q7">
-      <div class="q-label"><span class="q-num">7</span><span>시험에는 나왔지만 모의고사집에 없었던 개념이나 주제가 있었습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q6">
+      <div class="q-label"><span class="q-num">6</span><span>시험에는 나왔지만 모의고사집에 없었던 개념이나 주제가 있었습니까?<span class="req">*</span></span></div>
       <div class="q-body">
         <div class="choices">
-          <label class="choice"><input type="radio" name="q7" value="있었다"><span>있었다</span></label>
-          <label class="choice"><input type="radio" name="q7" value="없었다"><span>없었다</span></label>
-          <label class="choice"><input type="radio" name="q7" value="기억나지 않는다"><span>기억나지 않는다</span></label>
+          <label class="choice"><input type="radio" name="q6" value="있었다"><span>있었다</span></label>
+          <label class="choice"><input type="radio" name="q6" value="없었다"><span>없었다</span></label>
+          <label class="choice"><input type="radio" name="q6" value="기억나지 않는다"><span>기억나지 않는다</span></label>
         </div>
-        <div class="cond" id="q7cond">
+        <div class="cond" id="q6cond">
           <div class="cond-label">어떤 내용이었는지 적어주십시오. 짧아도 괜찮습니다.</div>
-          <textarea name="q7_txt" placeholder="예) 가족상담에서 특정 이론의 단계 구분이 나왔는데 교재에서는 다루지 않았습니다." style="min-height:100px"></textarea>
+          <textarea name="q6_txt" placeholder="예) 가족상담에서 특정 이론의 단계 구분이 나왔는데 교재에서는 다루지 않았습니다." style="min-height:100px"></textarea>
           <p class="q-help" style="margin:8px 0 0">과목명을 함께 적어주시면 개정판에 반영하기 쉽습니다. 분량 제한은 없습니다.</p>
         </div>
       </div>
@@ -239,82 +228,82 @@ textarea{min-height:130px;resize:vertical}
   <section class="section">
     <div class="section-head"><span class="section-num">03</span><h2 class="section-title">교재 품질</h2></div>
 
-    <div class="q" data-q="q8">
-      <div class="q-label"><span class="q-num">8</span><span>이 모의고사집이 필기시험 준비에 어느 정도 도움이 되었습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q7">
+      <div class="q-label"><span class="q-num">7</span><span>이 모의고사집이 필기시험 준비에 어느 정도 도움이 되었습니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="scale">
-        <div class="scale-track" id="q8track"></div>
+        <div class="scale-track" id="q7track"></div>
         <div class="scale-ends"><span>전혀 도움 안 됨</span><span>보통</span><span>매우 도움됨</span></div>
       </div></div>
     </div>
 
-    <div class="q" data-q="q9">
-      <div class="q-label"><span class="q-num">9</span><span>해설의 분량과 상세도는 적절했습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q8">
+      <div class="q-label"><span class="q-num">8</span><span>해설의 분량과 상세도는 적절했습니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="choices">
-        <label class="choice"><input type="radio" name="q9" value="매우 부족"><span>매우 부족했다</span></label>
-        <label class="choice"><input type="radio" name="q9" value="다소 부족"><span>다소 부족했다</span></label>
-        <label class="choice"><input type="radio" name="q9" value="적정"><span>적정했다</span></label>
-        <label class="choice"><input type="radio" name="q9" value="다소 상세"><span>다소 상세했다</span></label>
-        <label class="choice"><input type="radio" name="q9" value="지나치게 상세"><span>지나치게 상세했다</span></label>
+        <label class="choice"><input type="radio" name="q8" value="매우 부족"><span>매우 부족했다</span></label>
+        <label class="choice"><input type="radio" name="q8" value="다소 부족"><span>다소 부족했다</span></label>
+        <label class="choice"><input type="radio" name="q8" value="적정"><span>적정했다</span></label>
+        <label class="choice"><input type="radio" name="q8" value="다소 상세"><span>다소 상세했다</span></label>
+        <label class="choice"><input type="radio" name="q8" value="지나치게 상세"><span>지나치게 상세했다</span></label>
       </div></div>
     </div>
 
-    <div class="q" data-q="q10">
-      <div class="q-label"><span class="q-num">10</span><span>문항 오류를 발견하신 적이 있습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q9">
+      <div class="q-label"><span class="q-num">9</span><span>문항 오류를 발견하신 적이 있습니까?<span class="req">*</span></span></div>
       <p class="q-help">정답 오류, 지문 오류, 오탈자 등을 포함합니다.</p>
       <div class="q-body">
         <div class="choices grid-2">
-          <label class="choice"><input type="radio" name="q10" value="여러 번"><span>여러 번 있었다</span></label>
-          <label class="choice"><input type="radio" name="q10" value="몇 번"><span>몇 번 있었다</span></label>
-          <label class="choice"><input type="radio" name="q10" value="거의 없음"><span>거의 없었다</span></label>
-          <label class="choice"><input type="radio" name="q10" value="기억나지 않음"><span>기억나지 않는다</span></label>
+          <label class="choice"><input type="radio" name="q9" value="여러 번"><span>여러 번 있었다</span></label>
+          <label class="choice"><input type="radio" name="q9" value="몇 번"><span>몇 번 있었다</span></label>
+          <label class="choice"><input type="radio" name="q9" value="거의 없음"><span>거의 없었다</span></label>
+          <label class="choice"><input type="radio" name="q9" value="기억나지 않음"><span>기억나지 않는다</span></label>
         </div>
-        <div class="cond" id="q10cond">
+        <div class="cond" id="q9cond">
           <div class="cond-label">기억나는 오류가 있다면 과목이나 문항 번호를 적어주십시오. <span class="opt">선택</span></div>
-          <textarea name="q10_txt" placeholder="예) 진로상담 3회차 12번 정답이 잘못된 것 같습니다." style="min-height:90px"></textarea>
+          <textarea name="q9_txt" placeholder="예) 진로상담 3회차 12번 정답이 잘못된 것 같습니다." style="min-height:90px"></textarea>
         </div>
       </div>
     </div>
 
-    <div class="q" data-q="q11">
-      <div class="q-label"><span class="q-num">11</span><span>내용을 몰라도 답을 고를 수 있는 문항이 있었습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q10">
+      <div class="q-label"><span class="q-num">10</span><span>내용을 몰라도 답을 고를 수 있는 문항이 있었습니까?<span class="req">*</span></span></div>
       <p class="q-help">예를 들어 유독 긴 선택지가 정답이거나, "항상" "절대"가 들어간 선택지는 오답인 경우입니다.</p>
       <div class="q-body"><div class="choices grid-2">
-        <label class="choice"><input type="radio" name="q11" value="자주"><span>자주 있었다</span></label>
-        <label class="choice"><input type="radio" name="q11" value="가끔"><span>가끔 있었다</span></label>
-        <label class="choice"><input type="radio" name="q11" value="거의 없음"><span>거의 없었다</span></label>
-        <label class="choice"><input type="radio" name="q11" value="의식 못함"><span>의식하지 못했다</span></label>
+        <label class="choice"><input type="radio" name="q10" value="자주"><span>자주 있었다</span></label>
+        <label class="choice"><input type="radio" name="q10" value="가끔"><span>가끔 있었다</span></label>
+        <label class="choice"><input type="radio" name="q10" value="거의 없음"><span>거의 없었다</span></label>
+        <label class="choice"><input type="radio" name="q10" value="의식 못함"><span>의식하지 못했다</span></label>
+      </div></div>
+    </div>
+
+    <div class="q" data-q="q11">
+      <div class="q-label"><span class="q-num">11</span><span>605쪽 단권 형태에 대해 어떻게 생각하십니까?<span class="req">*</span></span></div>
+      <div class="q-body"><div class="choices">
+        <label class="choice"><input type="radio" name="q11" value="현재 형태가 좋다"><span>지금 형태가 좋다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="두껍지만 괜찮다"><span>다소 두껍지만 괜찮다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="분권 희망"><span>과목별로 나누는 것이 좋겠다</span></label>
+        <label class="choice"><input type="radio" name="q11" value="모르겠다"><span>잘 모르겠다</span></label>
       </div></div>
     </div>
 
     <div class="q" data-q="q12">
-      <div class="q-label"><span class="q-num">12</span><span>605쪽 단권 형태에 대해 어떻게 생각하십니까?<span class="req">*</span></span></div>
-      <div class="q-body"><div class="choices">
-        <label class="choice"><input type="radio" name="q12" value="현재 형태가 좋다"><span>지금 형태가 좋다</span></label>
-        <label class="choice"><input type="radio" name="q12" value="두껍지만 괜찮다"><span>다소 두껍지만 괜찮다</span></label>
-        <label class="choice"><input type="radio" name="q12" value="분권 희망"><span>과목별로 나누는 것이 좋겠다</span></label>
-        <label class="choice"><input type="radio" name="q12" value="모르겠다"><span>잘 모르겠다</span></label>
+      <div class="q-label"><span class="q-num">12</span><span>이 교재에서 가장 도움이 되었던 점을 골라주십시오.<span class="req">*</span></span></div>
+      <p class="q-help">여러 개 고르실 수 있습니다. 다음 판에서 유지해야 할 부분을 판단하는 데 씁니다.</p>
+      <div class="q-body"><div class="choices grid-2">
+        <label class="choice"><input type="checkbox" name="q12" value="700문항 물량"><span>700문항이라는 문제량</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="7과목 전과목 구성"><span>7과목 전체를 다룬 구성</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="해설"><span>해설의 내용</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="실전 유사도"><span>실제 시험과의 유사도</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="가격"><span>가격 대비 가치</span></label>
+        <label class="choice"><input type="checkbox" name="q12" value="단권 구성"><span>한 권에 정리된 점</span></label>
+        <label class="choice" data-excl="1"><input type="checkbox" name="q12" value="특별히 없음"><span>특별히 없음</span></label>
       </div></div>
     </div>
 
     <div class="q" data-q="q13">
-      <div class="q-label"><span class="q-num">13</span><span>이 교재에서 가장 도움이 되었던 점을 골라주십시오.<span class="req">*</span></span></div>
-      <p class="q-help">여러 개 고르실 수 있습니다. 다음 판에서 유지해야 할 부분을 판단하는 데 씁니다.</p>
-      <div class="q-body"><div class="choices grid-2">
-        <label class="choice"><input type="checkbox" name="q13" value="700문항 물량"><span>700문항이라는 문제량</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="7과목 전과목 구성"><span>7과목 전체를 다룬 구성</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="해설"><span>해설의 내용</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="실전 유사도"><span>실제 시험과의 유사도</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="가격"><span>가격 대비 가치</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="단권 구성"><span>한 권에 정리된 점</span></label>
-        <label class="choice"><input type="checkbox" name="q13" value="특별히 없음"><span>특별히 없음</span></label>
-      </div></div>
-    </div>
-
-    <div class="q" data-q="q14">
-      <div class="q-label"><span class="q-num">14</span><span>가장 아쉬웠던 점, 고쳐야 한다고 보시는 부분을 적어주십시오.<span class="req">*</span></span></div>
+      <div class="q-label"><span class="q-num">13</span><span>가장 아쉬웠던 점, 고쳐야 한다고 보시는 부분을 적어주십시오.<span class="req">*</span></span></div>
       <p class="q-help">구체적일수록 반영하기 쉽습니다. 비판적인 의견이 오히려 감사합니다.</p>
       <div class="q-body">
-        <textarea name="q14" data-min="100" placeholder="구체적인 과목이나 쪽수를 함께 적어주시면 더 좋습니다."></textarea>
+        <textarea name="q13" data-min="100" placeholder="구체적인 과목이나 쪽수를 함께 적어주시면 더 좋습니다."></textarea>
         <div class="meter">
           <div class="meter-rail"><div class="meter-fill"></div></div>
           <div class="meter-row"><span class="meter-count">0 / 100자</span><span class="meter-status">100자 이상 필요합니다</span></div>
@@ -328,25 +317,25 @@ textarea{min-height:130px;resize:vertical}
     <div class="section-head"><span class="section-num">04</span><h2 class="section-title">구매 결정</h2></div>
     <p class="section-note">교재를 알리는 방식을 개선하는 데 씁니다.</p>
 
-    <div class="q" data-q="q15">
-      <div class="q-label"><span class="q-num">15</span><span>이 모의고사집을 어떻게 알게 되셨습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q14">
+      <div class="q-label"><span class="q-num">14</span><span>이 모의고사집을 어떻게 알게 되셨습니까?<span class="req">*</span></span></div>
       <div class="q-body">
         <div class="choices grid-2">
-          <label class="choice"><input type="radio" name="q15" value="블로그 검색"><span>블로그 검색</span></label>
-          <label class="choice"><input type="radio" name="q15" value="카페·커뮤니티"><span>카페·커뮤니티</span></label>
-          <label class="choice"><input type="radio" name="q15" value="지인 추천"><span>지인 추천</span></label>
-          <label class="choice"><input type="radio" name="q15" value="SNS"><span>SNS</span></label>
-          <label class="choice"><input type="radio" name="q15" value="기타"><span>기타</span></label>
+          <label class="choice"><input type="radio" name="q14" value="블로그 검색"><span>블로그 검색</span></label>
+          <label class="choice"><input type="radio" name="q14" value="카페·커뮤니티"><span>카페·커뮤니티</span></label>
+          <label class="choice"><input type="radio" name="q14" value="지인 추천"><span>지인 추천</span></label>
+          <label class="choice"><input type="radio" name="q14" value="SNS"><span>SNS</span></label>
+          <label class="choice"><input type="radio" name="q14" value="기타"><span>기타</span></label>
         </div>
-        <input type="text" class="sub-input" name="q15_etc" placeholder="기타 경로" aria-label="기타 경로">
+        <input type="text" class="sub-input" name="q14_etc" placeholder="기타 경로" aria-label="기타 경로">
       </div>
     </div>
 
-    <div class="q" data-q="q16">
-      <div class="q-label"><span class="q-num">16</span><span>구매를 망설이게 한 요인이 있었습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q15">
+      <div class="q-label"><span class="q-num">15</span><span>구매를 망설이게 한 요인이 있었습니까?<span class="req">*</span></span></div>
       <p class="q-help">가격, 정보 부족, 미리보기 부재, 저자에 대한 정보 등 무엇이든 좋습니다. 망설임이 없었다면 왜 바로 결정하셨는지 적어주십시오.</p>
       <div class="q-body">
-        <textarea name="q16" data-min="50" placeholder="예) 미리보기가 없어서 문항 수준을 가늠할 수 없었습니다." style="min-height:100px"></textarea>
+        <textarea name="q15" data-min="50" placeholder="예) 미리보기가 없어서 문항 수준을 가늠할 수 없었습니다." style="min-height:100px"></textarea>
         <div class="meter">
           <div class="meter-rail"><div class="meter-fill"></div></div>
           <div class="meter-row"><span class="meter-count">0 / 50자</span><span class="meter-status">50자 이상 필요합니다</span></div>
@@ -354,21 +343,21 @@ textarea{min-height:130px;resize:vertical}
       </div>
     </div>
 
-    <div class="q" data-q="q17">
-      <div class="q-label"><span class="q-num">17</span><span>판매가 49,000원에 대해 어떻게 생각하십니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q16">
+      <div class="q-label"><span class="q-num">16</span><span>판매가 49,000원에 대해 어떻게 생각하십니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="choices">
-        <label class="choice"><input type="radio" name="q17" value="매우 비싸다"><span>매우 비싸다</span></label>
-        <label class="choice"><input type="radio" name="q17" value="다소 비싸다"><span>다소 비싸다</span></label>
-        <label class="choice"><input type="radio" name="q17" value="적정하다"><span>적정하다</span></label>
-        <label class="choice"><input type="radio" name="q17" value="다소 저렴하다"><span>다소 저렴하다</span></label>
-        <label class="choice"><input type="radio" name="q17" value="매우 저렴하다"><span>매우 저렴하다</span></label>
+        <label class="choice"><input type="radio" name="q16" value="매우 비싸다"><span>매우 비싸다</span></label>
+        <label class="choice"><input type="radio" name="q16" value="다소 비싸다"><span>다소 비싸다</span></label>
+        <label class="choice"><input type="radio" name="q16" value="적정하다"><span>적정하다</span></label>
+        <label class="choice"><input type="radio" name="q16" value="다소 저렴하다"><span>다소 저렴하다</span></label>
+        <label class="choice"><input type="radio" name="q16" value="매우 저렴하다"><span>매우 저렴하다</span></label>
       </div></div>
     </div>
 
-    <div class="q" data-q="q18">
-      <div class="q-label"><span class="q-num">18</span><span>동료 수험생에게 추천하실 의향은 어느 정도입니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q17">
+      <div class="q-label"><span class="q-num">17</span><span>동료 수험생에게 추천하실 의향은 어느 정도입니까?<span class="req">*</span></span></div>
       <div class="q-body"><div class="scale">
-        <div class="scale-track wide" id="q18track"></div>
+        <div class="scale-track wide" id="q17track"></div>
         <div class="scale-ends"><span>전혀 없다</span><span>매우 높다</span></div>
       </div></div>
     </div>
@@ -379,36 +368,36 @@ textarea{min-height:130px;resize:vertical}
     <div class="section-head"><span class="section-num">05</span><h2 class="section-title">구매 확인 및 동의</h2></div>
     <p class="section-note">기프티콘 발송에만 사용합니다.</p>
 
-    <div class="q" data-q="q19">
-      <div class="q-label"><span class="q-num">19</span><span>어디에서 구매하셨습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q18">
+      <div class="q-label"><span class="q-num">18</span><span>어디에서 구매하셨습니까?<span class="req">*</span></span></div>
       <div class="q-body">
         <div class="choices">
-          <label class="choice"><input type="radio" name="q19" value="스마트스토어"><span>스마트스토어</span></label>
-          <label class="choice"><input type="radio" name="q19" value="블로그 직접 문의"><span>블로그 직접 문의</span></label>
-          <label class="choice"><input type="radio" name="q19" value="기타"><span>기타</span></label>
+          <label class="choice"><input type="radio" name="q18" value="스마트스토어"><span>스마트스토어</span></label>
+          <label class="choice"><input type="radio" name="q18" value="블로그 직접 문의"><span>블로그 직접 문의</span></label>
+          <label class="choice"><input type="radio" name="q18" value="기타"><span>기타</span></label>
         </div>
-        <input type="text" class="sub-input" name="q19_etc" placeholder="기타 구매처" aria-label="기타 구매처">
+        <input type="text" class="sub-input" name="q18_etc" placeholder="기타 구매처" aria-label="기타 구매처">
       </div>
     </div>
 
-    <div class="q" data-q="q20">
-      <div class="q-label"><span class="q-num">20</span><span>주문번호를 적어주십시오.<span class="req">*</span></span></div>
+    <div class="q" data-q="q19">
+      <div class="q-label"><span class="q-num">19</span><span>주문번호를 적어주십시오.<span class="req">*</span></span></div>
       <p class="q-help">확인이 어려우시면 구매일을 적어주셔도 됩니다. 예: 2026-05-14</p>
-      <div class="q-body"><input type="text" name="q20" placeholder="주문번호 또는 구매일"></div>
+      <div class="q-body"><input type="text" name="q19" placeholder="주문번호 또는 구매일"></div>
     </div>
 
-    <div class="q" data-q="q21">
-      <div class="q-label"><span class="q-num">21</span><span>답변의 일부를 홍보 자료에 인용해도 되겠습니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q20">
+      <div class="q-label"><span class="q-num">20</span><span>답변의 일부를 홍보 자료에 인용해도 되겠습니까?<span class="req">*</span></span></div>
       <p class="q-help">지금 당장 공개하지는 않습니다. 앞으로 필요할 때를 위해 미리 여쭙습니다.</p>
       <div class="q-body"><div class="choices">
-        <label class="choice"><input type="radio" name="q21" value="익명 인용 가능"><span>익명으로 인용해도 좋다</span></label>
-        <label class="choice"><input type="radio" name="q21" value="닉네임 인용 가능"><span>닉네임으로 인용해도 좋다</span></label>
-        <label class="choice"><input type="radio" name="q21" value="인용 불가"><span>인용을 원하지 않는다</span></label>
+        <label class="choice"><input type="radio" name="q20" value="익명 인용 가능"><span>익명으로 인용해도 좋다</span></label>
+        <label class="choice"><input type="radio" name="q20" value="닉네임 인용 가능"><span>닉네임으로 인용해도 좋다</span></label>
+        <label class="choice"><input type="radio" name="q20" value="인용 불가"><span>인용을 원하지 않는다</span></label>
       </div></div>
     </div>
 
-    <div class="q" data-q="q22">
-      <div class="q-label"><span class="q-num">22</span><span>개인정보 수집과 이용에 동의하십니까?<span class="req">*</span></span></div>
+    <div class="q" data-q="q21">
+      <div class="q-label"><span class="q-num">21</span><span>개인정보 수집과 이용에 동의하십니까?<span class="req">*</span></span></div>
       <div class="q-body">
         <div class="consent-box"><dl>
           <dt>수집 항목</dt><dd>휴대폰 번호, 구매 확인 정보</dd>
@@ -416,15 +405,15 @@ textarea{min-height:130px;resize:vertical}
           <dt>보유 기간</dt><dd>발송 완료 후 즉시 파기</dd>
         </dl></div>
         <div class="choices">
-          <label class="choice"><input type="radio" name="q22" value="동의"><span>동의합니다</span></label>
-          <label class="choice"><input type="radio" name="q22" value="비동의"><span>동의하지 않습니다 (기프티콘 발송 불가)</span></label>
+          <label class="choice"><input type="radio" name="q21" value="동의"><span>동의합니다</span></label>
+          <label class="choice"><input type="radio" name="q21" value="비동의"><span>동의하지 않습니다 (기프티콘 발송 불가)</span></label>
         </div>
       </div>
     </div>
 
-    <div class="q" data-q="q23">
-      <div class="q-label"><span class="q-num">23</span><span>기프티콘을 받으실 휴대폰 번호를 적어주십시오.<span class="req">*</span></span></div>
-      <div class="q-body"><input type="tel" name="q23" placeholder="010-0000-0000" maxlength="13"></div>
+    <div class="q" data-q="q22">
+      <div class="q-label"><span class="q-num">22</span><span>기프티콘을 받으실 휴대폰 번호를 적어주십시오.<span class="req">*</span></span></div>
+      <div class="q-body"><input type="tel" name="q22" placeholder="010-0000-0000" maxlength="13"></div>
     </div>
   </section>
 
@@ -461,21 +450,41 @@ function buildScale(id, name, min, max){
   }
   document.getElementById(id).innerHTML = html;
 }
-buildScale("q4track","q4",1,5);
-buildScale("q6track","q6",1,5);
-buildScale("q8track","q8",1,5);
-buildScale("q18track","q18",0,10);
+buildScale("q3track","q3",1,5);
+buildScale("q5track","q5",1,5);
+buildScale("q7track","q7",1,5);
+buildScale("q17track","q17",0,10);
 
 /* ---------- 과목 ---------- */
 const SUBJECTS = [
   "상담 이론과 실제","상담윤리","집단상담 이론과 실제","심리검사와 상담",
   "상담연구방법론","진로상담","가족상담"
 ];
-document.getElementById("q5box").innerHTML =
+document.getElementById("q4box").innerHTML =
   SUBJECTS.map(function(s){
-    return '<label class="choice"><input type="checkbox" name="q5" value="' + s + '"><span>' + s + '</span></label>';
+    return '<label class="choice"><input type="checkbox" name="q4" value="' + s + '"><span>' + s + '</span></label>';
   }).join("")
-  + '<label class="choice"><input type="checkbox" name="q5" value="특별히 없음"><span>특별히 없음</span></label>';
+  + '<label class="choice" data-excl="1"><input type="checkbox" name="q4" value="특별히 없음"><span>특별히 없음</span></label>';
+
+/* ---------- 배타 선택지 ("특별히 없음") ---------- */
+function bindExclusive(groupName){
+  const boxes = Array.prototype.slice.call(document.getElementsByName(groupName));
+  boxes.forEach(function(b){
+    b.addEventListener("change",function(){
+      const isExcl = b.parentElement.dataset.excl === "1";
+      if(b.checked){
+        if(isExcl){
+          boxes.forEach(function(o){ if(o!==b) o.checked=false; });
+        } else {
+          boxes.forEach(function(o){ if(o.parentElement.dataset.excl==="1") o.checked=false; });
+        }
+      }
+      updateProgress();
+    });
+  });
+}
+bindExclusive("q4");
+bindExclusive("q12");
 
 /* ---------- 조건부 표시 ---------- */
 function bindCond(radioName, showValues, condId){
@@ -488,8 +497,8 @@ function bindCond(radioName, showValues, condId){
     });
   });
 }
-bindCond("q7",["있었다"],"q7cond");
-bindCond("q10",["여러 번","몇 번"],"q10cond");
+bindCond("q6",["있었다"],"q6cond");
+bindCond("q9",["여러 번","몇 번"],"q9cond");
 
 /* ---------- 글자수 미터 ---------- */
 document.querySelectorAll("textarea[data-min]").forEach(function(ta){
@@ -510,14 +519,14 @@ document.querySelectorAll("textarea[data-min]").forEach(function(ta){
 
 /* ---------- 필수 문항 ---------- */
 const REQUIRED = [
-  {n:"q1",t:"radio"},{n:"q2",t:"radio"},{n:"q3",t:"radio"},{n:"q4",t:"radio"},
-  {n:"q5",t:"check"},{n:"q6",t:"radio"},{n:"q7",t:"radio"},
-  {n:"q7_txt",t:"cond",when:{n:"q7",v:["있었다"]}},
-  {n:"q8",t:"radio"},{n:"q9",t:"radio"},{n:"q10",t:"radio"},
-  {n:"q11",t:"radio"},{n:"q12",t:"radio"},{n:"q13",t:"check"},{n:"q14",t:"long"},
-  {n:"q15",t:"radio"},{n:"q16",t:"long"},{n:"q17",t:"radio"},{n:"q18",t:"radio"},
-  {n:"q19",t:"radio"},{n:"q20",t:"text"},{n:"q21",t:"radio"},{n:"q22",t:"radio"},
-  {n:"q23",t:"text"}
+  {n:"q1",t:"radio"},{n:"q2",t:"radio"},
+  {n:"q3",t:"radio"},{n:"q4",t:"check"},{n:"q5",t:"radio"},{n:"q6",t:"radio"},
+  {n:"q6_txt",t:"cond",when:{n:"q6",v:["있었다"]}},
+  {n:"q7",t:"radio"},{n:"q8",t:"radio"},{n:"q9",t:"radio"},
+  {n:"q10",t:"radio"},{n:"q11",t:"radio"},{n:"q12",t:"check"},{n:"q13",t:"long"},
+  {n:"q14",t:"radio"},{n:"q15",t:"long"},{n:"q16",t:"radio"},{n:"q17",t:"radio"},
+  {n:"q18",t:"radio"},{n:"q19",t:"text"},{n:"q20",t:"radio"},{n:"q21",t:"radio"},
+  {n:"q22",t:"text"}
 ];
 
 function checkedValue(name){
@@ -534,7 +543,7 @@ function isFilled(item){
     return els[0].value.trim().length >= Number(els[0].dataset.min);
   if(item.t==="cond"){
     const v = checkedValue(item.when.n);
-    if(item.when.v.indexOf(v) === -1) return true;   // 조건 미해당 = 충족으로 처리
+    if(item.when.v.indexOf(v) === -1) return true;
     return els[0].value.trim().length > 0;
   }
   return els[0].value.trim().length > 0;
@@ -549,7 +558,7 @@ document.addEventListener("change",updateProgress);
 updateProgress();
 
 /* ---------- 전화번호 하이픈 ---------- */
-document.querySelector("[name=q23]").addEventListener("input",function(e){
+document.querySelector("[name=q22]").addEventListener("input",function(e){
   let v = e.target.value.replace(/[^0-9]/g,"").slice(0,11);
   if(v.length>7) v = v.slice(0,3)+"-"+v.slice(3,7)+"-"+v.slice(7);
   else if(v.length>3) v = v.slice(0,3)+"-"+v.slice(3);
@@ -596,7 +605,7 @@ btn.addEventListener("click", function(){
     }
   });
 
-  ["q10_txt","q15_etc","q19_etc"].forEach(function(n){
+  ["q9_txt","q14_etc","q18_etc"].forEach(function(n){
     const el = document.querySelector("[name=" + n + "]");
     fd.append(n, el ? el.value.trim() : "");
   });
