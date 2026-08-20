@@ -1,12 +1,12 @@
 /**
- * 모의고사집 개정 의견 조사 - 응답 수집 백엔드 (v3)
- * 최규하상담심리연구소(2CPlab.)
+ * 모의고사집 개정 의견 조사 - 응답 수집 백엔드 (v4 · 진단 기능 포함)
+ * 2CPlab.
  *
- * 총 22문항. 가채점 문항 제거 후 번호 재정렬.
+ * 배포 후 /exec 주소를 브라우저에서 열면 연결 상태를 확인할 수 있습니다.
  */
 
 var SHEET_NAME = '응답';
-var ACCESS_KEY = 'cpl2026';   // index.html 의 ACCESS_KEY 와 동일해야 함
+var ACCESS_KEY = 'cpl2026';
 
 var FIELDS = [
   'timestamp',
@@ -44,7 +44,13 @@ function doPost(e) {
     });
 
     sheet.appendRow(row);
-    return jsonOut_({ result: 'ok' });
+
+    return jsonOut_({
+      result: 'ok',
+      rows: sheet.getLastRow(),
+      sheet: sheet.getName(),
+      file: sheet.getParent().getName()
+    });
 
   } catch (err) {
     return jsonOut_({ result: 'error', message: String(err) });
@@ -55,8 +61,36 @@ function doPost(e) {
 }
 
 
+/**
+ * 브라우저에서 /exec 주소를 열면 현재 연결 상태를 보여줍니다.
+ * 어느 스프레드시트에 기록되고 있는지 URL로 직접 확인할 수 있습니다.
+ */
 function doGet() {
-  return jsonOut_({ result: 'alive' });
+  try {
+    var ss = SpreadsheetApp.getActiveSpreadsheet();
+
+    if (!ss) {
+      return jsonOut_({
+        result: 'not_bound',
+        message: '이 스크립트가 스프레드시트에 연결되어 있지 않습니다. 구글 시트에서 확장 프로그램 > Apps Script 로 다시 만들어 주십시오.'
+      });
+    }
+
+    var sheet = ss.getSheetByName(SHEET_NAME);
+
+    return jsonOut_({
+      result: 'alive',
+      file: ss.getName(),
+      fileUrl: ss.getUrl(),
+      allTabs: ss.getSheets().map(function (s) { return s.getName(); }),
+      targetTab: SHEET_NAME,
+      targetTabExists: !!sheet,
+      rows: sheet ? sheet.getLastRow() : 0
+    });
+
+  } catch (err) {
+    return jsonOut_({ result: 'error', message: String(err) });
+  }
 }
 
 
@@ -76,7 +110,6 @@ function getSheet_() {
     head.setFontColor('#FFFFFF');
     sheet.setFrozenRows(1);
 
-    // 서술형 열 확장: 누락내용(8), 오류내용(12), 아쉬운점(16), 망설임(19)
     [8, 12, 16, 19].forEach(function (col) {
       sheet.setColumnWidth(col, 400);
     });
@@ -91,5 +124,3 @@ function jsonOut_(obj) {
     .createTextOutput(JSON.stringify(obj))
     .setMimeType(ContentService.MimeType.JSON);
 }
-
-
