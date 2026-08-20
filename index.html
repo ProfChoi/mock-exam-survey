@@ -597,7 +597,7 @@ btn.addEventListener("click", function(){
   btn.textContent = "보내는 중";
   msg.textContent = "";
 
-  const fd = new FormData();
+  const fd = new URLSearchParams();
   fd.append("k", ACCESS_KEY);
   fd.append("timestamp", new Date().toLocaleString("ko-KR",{timeZone:"Asia/Seoul"}));
 
@@ -618,7 +618,7 @@ btn.addEventListener("click", function(){
     fd.append(n, el ? el.value.trim() : "");
   });
 
-  fetch(ENDPOINT,{method:"POST",body:fd})
+  fetch(ENDPOINT,{method:"POST",mode:"no-cors",body:fd})
     .then(function(){
       document.getElementById("formView").style.display="none";
       document.getElementById("doneView").classList.add("show");
